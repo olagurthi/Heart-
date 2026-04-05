@@ -1,0 +1,5 @@
+At 55% positive cases, accuracy is a reliable metric without class imbalance concerns.ST_Slope, ChestPainType, and Oldpeak emerged as most informative clinically relevant ECG and symptom indicators. 
+Best performer with CV score of 85.3%. The optimal regularization (C = 0.006105) was much stronger than default, indicating multicollinearity from one-hot encoding required aggressive regularization. 
+The 85.3% cross-validation score reflects held-out performance, so final test accuracy should match this without surprises.
+Despite slightly lower accuracy, it's most practical for doctors  interpretable rules matter more than a 2–3% accuracy gap in real diagnostics. 
+Naive Bayes also performed well, confirming individual features carry strong signal.
