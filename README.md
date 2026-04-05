@@ -173,25 +173,6 @@ Collects accuracy and AUC-ROC for all four models and produces:
 
 ---
 
-## 🔍 Key Observations
-
-**1 — Top features align with clinical knowledge**
-`ST_Slope`, `ChestPainType`, and `Oldpeak` are consistently the most important features — well-known ECG and symptom indicators of cardiac stress during exercise.
-
-**2 — Strong regularisation was needed for Logistic Regression**
-GridSearchCV tuned `C` to `0.006105` (best CV score: `0.853`) — far below the default of 1.0. This indicates strong regularisation was needed, likely due to multicollinearity introduced by the one-hot encoded categorical columns.
-
-**3 — Decision Tree wins on interpretability**
-Despite slightly lower accuracy, its rules can be read directly by a clinician — e.g. *"flat ST slope AND Oldpeak > 1.5 → predict disease"*. In a medical setting this often matters more than a 2–3% accuracy difference.
-
-**4 — Naive Bayes punches above its weight**
-Performed competitively despite the naive independence assumption, confirming that individual features carry enough signal about heart disease risk on their own.
-
-**5 — Recall matters more than accuracy here**
-For clinical deployment, a missed diagnosis (false negative) is far more costly than a false alarm. The decision threshold should be tuned to maximise Recall for the Disease class, not raw accuracy.
-
----
-
 ## 📐 Evaluation Metrics
 
 | Metric | Why it matters |
